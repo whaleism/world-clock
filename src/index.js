@@ -1,26 +1,59 @@
 function updateTime() {
-  // Lapland, Finland (use Europe/Mariehamn for timezone)
+  // South Pole, Antarctica (use Antarctica/South_Pole for timezone)
 
-  let laplandElement = document.querySelector("#lapland");
-  let laplandDateElement = laplandElement.querySelector(".date");
-  let laplandTimeElement = laplandElement.querySelector(".time");
-  let laplandTime = moment().tz("Europe/Mariehamn");
+  let southpoleElement = document.querySelector("#southpole");
+  if (southpoleElement) {
+    let southpoleDateElement = southpoleElement.querySelector(".date");
+    let southpoleTimeElement = southpoleElement.querySelector(".time");
+    let southpoleTime = moment().tz("Antarctica/South_Pole");
 
-  laplandDateElement.innerHTML = laplandTime.format("MMMM Do YYYY");
-  laplandTimeElement.innerHTML = laplandTime.format(
-    "h:mm:ss [<small>]A[</small]"
-  );
+    southpoleDateElement.innerHTML = southpoleTime.format("MMMM Do YYYY");
+    southpoleTimeElement.innerHTML = southpoleTime.format(
+      "h:mm:ss [<small>]A[</small]"
+    );
+  }
 
   // Tokyo, Japan (use Asia/Tokyo for timezone)
 
   let tokyoElement = document.querySelector("#tokyo");
-  let tokyoDateElement = tokyoElement.querySelector(".date");
-  let tokyoTimeElement = tokyoElement.querySelector(".time");
-  let tokyoTime = moment().tz("Asia/Tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
 
-  tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
-  tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss [<small>]A[</small]");
+    tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format(
+      "h:mm:ss [<small>]A[</small]"
+    );
+  }
+}
+
+function updateCity(event) {
+  event.preventDefault();
+
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  console.log(cityName);
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = citiesElement = `
+  <div class="city">
+          <div>
+            <h2>${cityTimeZone}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format("h:mm:ss")}
+            <small>
+            ${cityTime.format("A")}
+            </small>
+          </div>
+        </div>
+  
+  `;
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
