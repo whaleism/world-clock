@@ -5,12 +5,13 @@ body {
 
 h1 {
   font-size: 38px;
-  font-weight: 600;
-  line-height: 5px;
+  font-weight: 700;
+  line-height: 15px;
   text-align: center;
 }
 
 h2 {
+  font-weight: 400;
   margin: 0;
 }
 
@@ -36,7 +37,7 @@ select {
   background-color: #b8bacf;
   border-radius: 10px;
   box-shadow: 0 7px 15px 0 rgb(0, 0, 0, 0.2);
-  max-width: 550px;
+  max-width: 500px;
   margin: 100px auto;
   padding: 30px;
 }
@@ -55,13 +56,13 @@ select {
 }
 
 .date {
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.5;
 }
 
 .time {
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .time small {
