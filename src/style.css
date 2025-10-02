@@ -1,5 +1,5 @@
 body {
-  background-color: #d2d5dd;
+  background-color: #eee2df;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -11,12 +11,13 @@ h1 {
 }
 
 h1 a {
-  color: black;
+  color: #593d3b;
   text-decoration: none;
   cursor: pointer;
 }
 
 h2 {
+  color: #593d3b;
   font-weight: 400;
   margin: 0;
 }
@@ -27,7 +28,7 @@ footer {
 }
 
 footer a {
-  color: #999ac6;
+  color: #b36a5e;
 }
 
 select {
@@ -36,12 +37,13 @@ select {
   border-radius: 5px;
   font-size: 14px;
   padding: 10px;
+  text-align: center;
   width: 100%;
 }
 
 .container {
-  background-color: #b8bacf;
-  border-radius: 10px;
+  background-color: #c89f9c;
+  border-radius: 5px;
   box-shadow: 0 7px 15px 0 rgb(0, 0, 0, 0.2);
   max-width: 500px;
   margin: 100px auto;
@@ -67,6 +69,7 @@ select {
 }
 
 .time {
+  color: #593d3b;
   font-size: 38px;
   font-weight: 500;
 }
@@ -75,4 +78,8 @@ select {
   font-size: 18px;
   vertical-align: middle;
   line-height: 30px;
+}
+
+.cities-link a {
+  color: black;
 }
